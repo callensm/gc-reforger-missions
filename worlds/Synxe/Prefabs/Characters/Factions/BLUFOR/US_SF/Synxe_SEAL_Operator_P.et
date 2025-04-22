@@ -1,0 +1,21 @@
+SCR_ChimeraCharacter : "{471A1EE214C8C217}worlds/Synxe/Prefabs/Characters/Factions/BLUFOR/US_SF/Synxe_SEAL_Base.et" {
+ ID "520EC961A090B1EE"
+ components {
+  PS_PlayableComponent "{5EFCC1946F475F15}" {
+   m_sName "Operator"
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{9765094908F0420D}Prefabs/Characters/HeadGear/Helmet_OPSCORE/variants/Helmet_OPSCORE_SF_MARSOC5.et"
+    }
+    LoadoutSlotInfo Jacket {
+     Prefab "{41F012511A395830}Prefabs/Characters/Uniforms/Crye_Shirt/Jacket_Crye_Combat_Shirt_Rolled_m81.et"
+    }
+    LoadoutSlotInfo Vest {
+     Prefab "{1300A5F6CA51B204}Prefabs/Characters/Vests/Vest_PCGen_III/Variants/Vest_PCGen_III_rifleman.et"
+    }
+   }
+  }
+ }
+}

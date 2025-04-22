@@ -1,0 +1,85 @@
+GenericEntity philippe_power_box : "{4D759A30BDE386D2}Prefabs/Structures/Military/Bunkers/AircraftShelter_E_01/AircraftShelter_E_01_powerbox.et" {
+ components {
+  ActionsManagerComponent "{65231C2CC237B632}" {
+   ActionContexts {
+    UserActionContext "{65231C2CC4D4FB33}" {
+     ContextName "default"
+     Position PointInfo "{65231C2CE8BE9F0B}" {
+      Offset -0.05 1.5 0.2
+     }
+     Radius 0.2
+     VisibilityAngle 0
+     LineOfSightCheck 1
+    }
+   }
+   additionalActions {
+    TILW_BaseInteraction "{65231C2CB295E40A}" {
+     ParentContextList {
+      "default"
+     }
+     Duration 5
+     m_actionName "Power: Shutdown St. Philippe"
+     m_flagName "POWER_OUTAGE_PHILIPPE"
+    }
+   }
+  }
+  RplComponent "{58FC7CAC2034C3E2}" {
+   Enabled 1
+  }
+ }
+ coords 5803.14 5.132 9792.417
+ angleY 3.545
+}
+GenericEntity intel : "{6D56FED1E55A8F84}Prefabs/Items/Misc/IntelligenceFolder_E_01/IntelligenceFolder_E_01.et" {
+ components {
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{508AB5952B584B2E}" {
+   ActionContexts {
+    UserActionContext "{508AC2ABEC97066C}" {
+     LineOfSightCheck 1
+    }
+   }
+   additionalActions {
+    TILW_BaseInteraction "{51EC842E3A187379}" {
+     Duration 10
+     m_actionName "Intel: Transmit Dossier"
+     m_flagName "INTEL_TRANSMITTED"
+    }
+   }
+  }
+ }
+ coords 4427.469 7.201 11029.695
+ angleY -85.382
+}
+GenericEntity container : "{7E3F6F5A6BAEC717}Prefabs/Props/Industrial/CargoContainers/CargoContainer_01/CargoContainer_01_20ft_olive.et" {
+ components {
+  ActionsManagerComponent "{65233D4EE0A05426}" {
+   ActionContexts {
+    UserActionContext "{65233D4EE5B67B73}" {
+     ContextName "default"
+     Position PointInfo "{65233D4EE61EACDA}" {
+      Offset -0.0625 1.2912 3.0544
+     }
+     LineOfSightCheck 1
+    }
+   }
+   additionalActions {
+    TILW_BaseInteraction "{65233D4E9EAE7976}" {
+     ParentContextList {
+      "default"
+     }
+     Duration 2
+     m_actionName "Cargo: Place Beacon"
+     m_flagName "BEACON_PLACED"
+     m_conditionFlag "INTEL_TRANSMITTED"
+    }
+   }
+  }
+  RplComponent "{65233D4F66821A20}" {
+  }
+ }
+ coords 4408.708 1.594 11189.963
+ angleY -1.485
+}

@@ -1,0 +1,23 @@
+SCR_AIGroup {
+ ID "652C06968F565F3E"
+ components {
+  AIFormationComponent "{652C06968F565F24}" {
+  }
+  SCR_CallsignGroupComponent "{652C06968F565F54}" {
+  }
+  RplComponent "{652C06968F565F58}" {
+   Streamable Disabled
+  }
+ }
+ coords 109.908 1.001 128.093
+ m_faction "US"
+ m_aUnitPrefabSlots {
+  "{5BD8EA57B19C6DA8}worlds/Synxe/Prefabs/Characters/Factions/BLUFOR/US_SF/Synxe_SEAL_PL_P.et" "{2B148B1CAD34C870}worlds/Synxe/Prefabs/Characters/Factions/BLUFOR/US_SF/Synxe_SEAL_JTAC_P.et" "{60B502D69B2F656A}worlds/Synxe/Prefabs/Characters/Factions/BLUFOR/US_SF/Synxe_SEAL_Medic_P.et" "{60B502D69B2F656A}worlds/Synxe/Prefabs/Characters/Factions/BLUFOR/US_SF/Synxe_SEAL_Medic_P.et"
+ }
+ m_bDeleteWhenEmpty 0
+ m_iGroupRadioFrequency 52000
+ m_iMaxMembers 6
+ m_bPlayable 1
+ m_bDeleteIfNoPlayer 0
+ m_bSetPlayable 1
+}

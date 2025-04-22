@@ -1,0 +1,44 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ situation {
+  coords 4844.583 26.339 10851.255
+  m_sTitle "Situation"
+  m_sTextData "Recent shipments of weapons and equipment are rumored to have been exported out of the port of Saint Philippe, but we have yet to track down the middle men involved in the distribution."\
+  ""\
+  "We need to find one of these shipments awaiting transport and track it so that we can hunt and shutdown the entire logistically chain."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ mission {
+  coords 4811.359 27.68 10865.842
+  m_sTitle "Mission"
+  m_sTextData "Task Force 162 has been tasked with finding and placing a tracking beacon on a shipping container in the vicinity of the Saint Philippe harbor in order to locate the recipient for follow up operations, no later than 0230."\
+  ""\
+  "I say again..."\
+  ""\
+  "Task Force 162 has been tasked with finding and placing a tracking beacon on a shipping container in the vicinity of the Saint Philippe harbor in order to locate the recipient for follow up operations, no later than 0230."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ execution {
+  coords 4811.359 27.68 10865.842
+  m_sTitle "Execution"
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ service_support {
+  coords 4811.359 27.68 10865.842
+  m_sTitle "Service and Support"
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ command_signal {
+  coords 4810.841 25.196 10821.627
+  m_sTitle "Command and Signal"
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+}

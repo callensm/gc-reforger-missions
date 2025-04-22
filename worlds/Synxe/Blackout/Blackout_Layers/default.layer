@@ -1,0 +1,171 @@
+SCR_AIWorld : "{70CCCF16487C927F}Prefabs/AI/SCR_AIWorld_Eden.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60B8A297F9E52831}" {
+     NavmeshFile "{AD5F99CD7C59D5E0}worlds/GameMaster/Navmeshes/GM_Eden.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings ChimeraNavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60B8A297F3B4EE8A}" {
+     NavmeshFile "{C35ECF3276824654}worlds/GameMaster/Navmeshes/GM_Eden_vehicles.nmn"
+    }
+   }
+  }
+ }
+ coords 4947.561 10.689 10837.301
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 4939.894 13.323 10866.291
+}
+PS_GameModeCoop PS_GameMode_Lobby_TILWMF1 : "{4CFD54745CD45673}Prefabs/MP/Modes/PS_GameMode_Lobby_TILWMF.et" {
+ components {
+  SCR_TimeAndWeatherHandlerComponent "{5EE3229927D4D2F5}" {
+   m_iStartingHours 1
+   m_bUseSpecifiedDate 1
+   m_iSetDay 24
+   m_iSetMonth 2
+   m_iSetYear 2024
+   m_bOverrideGeocoords 1
+   m_fLatitude -31
+   m_fLongitude -13
+  }
+ }
+ coords 4916.074 9.715 10868.079
+ {
+  SCR_FactionManager {
+   ID "5ED9088735FF2D8B"
+   Factions {
+    SCR_Faction "{56DEAC40D2DBC8B1}" {
+     UIInfo SCR_FactionUIInfo "{528C961236B7DCD3}" {
+      Name "US Navy SEALs"
+      m_sNameUpper "US NAVY SEALS"
+     }
+    }
+   }
+  }
+ }
+}
+GenericEntity PowerCenterStPhillipe {
+ components {
+  SYNXE_PowerOutageComponent "{6522273B31E4F34B}" {
+   m_flag "POWER_OUTAGE_PHILIPPE"
+   m_radius 2000
+  }
+ }
+ coords 4940.708 8.99 10707.575
+}
+PolylineShapeEntity : "{85222A2744768C81}Prefabs/Logic/AOLimit/TILW_AOLimit.et" {
+ components {
+  TILW_AOLimitComponent "{6217617AC21DEB7B}" {
+   m_ignoredVehicles {
+    "{C5534EAA593596B6}Prefabs/Vehicles/Helicopters/AUS_MH60/AUS_MH60M_SOAR_61.et"
+   }
+  }
+  TILW_MapShapeComponent "{6508F54F9B461198}" {
+   Enabled 1
+  }
+ }
+ coords 3703.377 0 7589.943
+ Points {
+  ShapePoint "{65233D495E99B088}" {
+   Position -269.768 0 597.433
+  }
+  ShapePoint "{65233D4953F8F2D3}" {
+   Position -9.119 19.949 3841.133
+  }
+  ShapePoint "{65233D49521FFEE3}" {
+   Position 2568.183 54.399 4188.911
+  }
+  ShapePoint "{65233D4955AA779C}" {
+   Position 3093.044 133.878 1467.517
+  }
+ }
+ LineColor 0 0 0 1
+}
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 4920.342 2.718 10876.765
+ m_missionEvents {
+  TILW_MissionEvent "{652166085F619536}" {
+   m_name "Time Limit"
+   m_instructions {
+    TILW_SendMessageInstruction "{652166088A45BE2D}" {
+     m_executionDelay 5400
+     m_messageTitle "Mission Failure"
+     m_messageBody "Time limit reached."
+    }
+    TILW_EndGameInstruction "{6521661714931CEF}" {
+     m_executionDelay 5405
+     m_gameOverType EDITOR_FACTION_DEFEAT
+    }
+   }
+   m_condition TILW_LiteralTerm "{65216617C2A62271}" {
+    m_invertTerm 1
+   }
+  }
+  TILW_MissionEvent "{6521660835CD91E4}" {
+   m_name "Casualty Failure"
+   m_instructions {
+    TILW_SendMessageInstruction "{65216608DC1B1E4E}" {
+     m_messageTitle "Mission Failure"
+     m_messageBody "The SEALs have taken too many casualties."
+    }
+    TILW_EndGameInstruction "{65216608FB1D9217}" {
+     m_executionDelay 15
+     m_gameOverType EDITOR_FACTION_DEFEAT
+    }
+   }
+   m_condition TILW_LiteralTerm "{652166082070F5CC}" {
+    m_flagName "SEAL_CASUALTIES"
+   }
+  }
+  TILW_MissionEvent "{65231C2E024BF050}" {
+   m_name "Alert St Philippe Power"
+   m_instructions {
+    TILW_SendMessageInstruction "{65231C2E35817709}" {
+     m_executionDelay 2
+     m_messageTitle "Power: St. Philippe"
+     m_messageBody "The power grid that services the town of St. Philippe has been shutdown."
+    }
+   }
+   m_condition TILW_LiteralTerm "{65231C2E3FC7B8F4}" {
+    m_flagName "POWER_OUTAGE_PHILIPPE"
+   }
+  }
+  TILW_MissionEvent "{65231C29825610D8}" {
+   m_name "Alert Intel Transmit"
+   m_instructions {
+    TILW_SendMessageInstruction "{65231C29B0C0FE37}" {
+     m_executionDelay 2
+     m_messageTitle "Objective: Cargo Dossier"
+     m_messageBody "The cargo dossier has been transmitted successfully to command, and can now find the shipping container at the port."
+    }
+   }
+   m_condition TILW_LiteralTerm "{65231C29BBCCE66A}" {
+    m_flagName "INTEL_TRANSMITTED"
+   }
+  }
+  TILW_MissionEvent "{65233D4F953A49ED}" {
+   m_name "Alert Beacon Placed"
+   m_instructions {
+    TILW_SendMessageInstruction "{65233D4C5EE44D38}" {
+     m_executionDelay 2
+     m_messageTitle "Objective: Mark the Cargo"
+     m_messageBody "The shipping container described in the dossier has been marked with a beacon for tracking."
+    }
+   }
+   m_condition TILW_LiteralTerm "{65233D4FB69128AB}" {
+    m_flagName "BEACON_PLACED"
+   }
+  }
+ }
+ m_casualtyFlags {
+  TILW_FactionPlayersKilledFlag "{6521660CCF86330E}" {
+   m_flagName "SEAL_CASUALTIES"
+   m_factionKey "US"
+   m_casualtyRatio 0.8
+  }
+ }
+}

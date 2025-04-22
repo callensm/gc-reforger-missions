@@ -1,0 +1,25 @@
+$grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker.et" {
+ philippe_power_station {
+  coords 5825.066 7.466 9730.038
+  angleY 90
+  m_sImageSet "{F7E8D4834A3AFF2F}UI/Imagesets/Conflict/conflict-icons-bw.imageset"
+  m_sImageSetGlow "{F7E8D4834A3AFF2F}UI/Imagesets/Conflict/conflict-icons-bw.imageset"
+  m_MarkerColor 0.624 0.397 0 1
+  m_sQuadName "Slot_Antenna"
+  m_fWorldSize 30
+  m_sDescription "St. Philippe Substation"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ base {
+  coords 3884.513 15.251 8445.665
+  m_sImageSet "{1228936E5DB30403}UI/Textures/GroupManagement/FlagIcons/GroupFlagsBlufor.imageset"
+  m_sImageSetGlow "{1228936E5DB30403}UI/Textures/GroupManagement/FlagIcons/GroupFlagsBlufor.imageset"
+  m_sQuadName "infantry"
+  m_fWorldSize 40
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+}
